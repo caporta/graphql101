@@ -14,8 +14,27 @@ GraphQL
     - ask services for data
     - merge data returned from services
 
-- **scalar vs complex fields**
 
 - **graphiql**
   - in-browser GraphQL IDE
   - [graphqlhub](https://www.graphqlhub.com)
+
+- **fields**
+  - modeled after functions
+    - accept arguments
+    - return data in response
+  - _resolver functions_ determine return values
+  - _complex fields_
+    - require a selection set
+    - types:
+      - GraphQLList
+      - GraphQLNonNull
+
+  - _scalar fields_
+    - lowest level types are always scalar
+    - types:
+      - GraphQLInt
+      - GraphQLFloat
+      - GraphQLString
+      - GraphQLBoolean
+      - GraphQLID (special; generally for refetch; responds w/ string)
