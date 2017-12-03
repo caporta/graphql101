@@ -38,3 +38,28 @@ GraphQL
       - GraphQLString
       - GraphQLBoolean
       - GraphQLID (special; generally for refetch; responds w/ string)
+
+- **variables**
+  - `$variableName`
+  - declared as keyword argument (name: type) of the query
+
+- **directives**
+  - alters runtime execution
+    - @skip
+    - @include
+
+- **aliases**
+  - alias keys to modify their response property
+  - helps to avoid client-side processing after response
+  - helps to get different instances of the same field in a single query
+
+- **fragments**
+  - field partials of a given type used for query composition
+  - can be used _inline_
+    - e.g. `... on ObjectType {}`
+    - useful for Union fields
+      - e.g. `author` is a union of `GithubUser` and `GithubCommitAuthor`
+      - allows us to get fields conditional to a type in the union
+
+- **mutations**
+  - query with runtime awareness of side effects
